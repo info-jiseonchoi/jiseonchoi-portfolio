@@ -16,7 +16,7 @@ html, body {
   padding: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: "Helvetica Neue", Arial, "Apple SD Gothic Neo", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -83,7 +83,8 @@ main.home {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, 216px);
+  justify-content: start;
   gap: var(--gap);
 }
 
@@ -259,12 +260,11 @@ main.about {
 .contact-line a:hover { border-color: var(--ink); }
 
 @media (max-width: 900px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 
 @media (max-width: 560px) {
-  .grid { grid-template-columns: repeat(1, 1fr); gap: 16px; }
+  .grid { grid-template-columns: repeat(auto-fill, 150px); gap: 16px; }
   header.site .wrap { height: 56px; }
   nav.main a { margin-left: 18px; }
   .project-head h1 { font-size: 26px; }
